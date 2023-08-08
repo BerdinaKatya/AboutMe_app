@@ -63,4 +63,3 @@ final class LogInViewController: UIViewController {
         present(alert, animated: true)
     }
 }
-
