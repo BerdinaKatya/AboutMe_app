@@ -10,24 +10,29 @@ import UIKit
 final class WelcomeViewController: UIViewController {
 
     @IBOutlet var welcomeLabel: UILabel!
-    @IBOutlet var emojiLabel: UILabel!
+    @IBOutlet var myNameLable: UILabel!
     
     var userName: String!
+    var personName: String!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         welcomeLabel.text = "Welcome, \(userName ?? "")!"
-        welcomeLabel.textColor = .white
-        emojiLabel.text = "🫰"
+        myNameLable.text = "My name is \(personName ?? "")"
         
+        view.addGradient()
+    }
+}
+
+extension UIView {
+    func addGradient() {
         let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
+        gradient.frame = bounds
         gradient.colors = [
-            UIColor.cyan.cgColor,
-            UIColor.orange.cgColor,
+            UIColor.white.cgColor,
+            UIColor.systemPink.cgColor
         ]
-        view.layer.insertSublayer(gradient, at: 0)
+        layer.insertSublayer(gradient, at: 0)
     }
 }
